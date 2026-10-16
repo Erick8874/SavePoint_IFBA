@@ -1,0 +1,48 @@
+{
+  "comentarios": [
+    {
+      "_id": 1,
+      "capturaId": 1,
+      "user": {
+        "userId": "jamelao@galeria.com",
+        "email": "ProSkater@galeria.com",
+        "name": "JamelãoProSkater"
+      },
+      "datetime": "2026-10-14T18:20:00.000Z",
+      "content": "Acho que já vi algo parecido em outro jogo."
+    },
+    {
+      "_id": 2,
+      "capturaId": 2,
+      "user": {
+        "userId": "luna@galeria.com",
+        "email": "luna@galeria.com",
+        "name": "Luna Reis"
+      },
+      "datetime": "2026-10-14T19:05:00.000Z",
+      "content": "Como é que pega isso agora???."
+    },
+    {
+      "_id": 3,
+      "capturaId": 3,
+      "user": {
+        "userId": "V@galeria.com",
+        "email": "V@galeria.com",
+        "name": "V"
+      },
+      "datetime": "2026-10-14T20:15:00.000Z",
+      "content": "Japantown a noite é a parte mais bonita de Night City."
+    },
+    {
+      "_id": 4,
+      "capturaId": 4,
+      "user": {
+        "userId": "QuaseNadaPrime@galeria.com",
+        "email": "QuaseNada@galeria.com",
+        "name": "Quase Nada Prime"
+      },
+      "datetime": "2026-10-14T21:10:00.000Z",
+      "content": "Esse aí se quebrou kkkk."
+    }
+  ]
+}

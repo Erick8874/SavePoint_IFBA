@@ -1,0 +1,88 @@
+{
+  "capturas": [
+    {
+      "_id": 1,
+      "tipo": "easter_egg",
+      "jogo": {
+        "nome": "Hollow Knight",
+        "estudio": "Team Cherry"
+      },
+      "captura": {
+        "titulo": "Uma referência em Hallownest",
+        "descricao": "Isso é tão familiar...",
+        "local": "Hallownest",
+        "plataforma": "PC",
+        "blobs": [
+          {
+            "type": "image",
+            "file": "recursos/imagens/HollowKnigth_Referencia.jpg"
+          }
+        ]
+      },
+      "likes": 0
+    },
+    {
+      "_id": 2,
+      "tipo": "local",
+      "jogo": {
+        "nome": "The Witcher 3: Wild Hunt",
+        "estudio": "CD Projekt Red"
+      },
+      "captura": {
+        "titulo": "Montanhas de Kaer Morhen",
+        "descricao": "O jogo já começa com essa paisagem.",
+        "local": "Kaer Morhen",
+        "plataforma": "PC",
+        "blobs": [
+          {
+            "type": "image",
+            "file": "recursos/imagens/TheWitcher3_Local.jpg"
+          }
+        ]
+      },
+      "likes": 0
+    },
+    {
+      "_id": 3,
+      "tipo": "cena",
+      "jogo": {
+        "nome": "Cyberpunk 2077",
+        "estudio": "CD Projekt Red"
+      },
+      "captura": {
+        "titulo": "Um lugar legal em Night City",
+        "descricao": "Um dos melhores lugares do jogo.",
+        "local": "Night City",
+        "plataforma": "PC",
+        "blobs": [
+          {
+            "type": "image",
+            "file": "recursos/imagens/Cyberpunk2077_Local_Legal.jpg"
+          }
+        ]
+      },
+      "likes": 0
+    },
+    {
+      "_id": 4,
+      "tipo": "bug",
+      "jogo": {
+        "nome": "Batman: Arkham Knight",
+        "estudio": "Rocksteady Studios"
+      },
+      "captura": {
+        "titulo": "Esse aí não apronta mais kkkk",
+        "descricao": "O Batman tá poucas ideias.",
+        "local": "Gotham City",
+        "plataforma": "PC",
+        "blobs": [
+          {
+            "type": "image",
+            "file": "recursos/imagens/BatmanArkhamKnigth_Quebrado.jpg"
+          }
+        ]
+      },
+      "likes": 0
+    }
+  ]
+}
