@@ -4,6 +4,26 @@
 
 A new Flutter project.
 
+## Executar o projeto
+
+Com o Flutter instalado, na primeira vez que baixar o repositório execute:
+
+```bash
+flutter pub get
+flutter run
+```
+
+O `flutter pub get` instala as dependências do projeto. Sem essa etapa, o editor
+pode mostrar erros de imports e tipos que desaparecem depois que as dependências
+são resolvidas.
+
+Para verificar o código e executar os testes:
+
+```bash
+flutter analyze
+flutter test
+```
+
 ## Getting Started
 
 This project is a starting point for a Flutter application.

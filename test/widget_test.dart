@@ -153,7 +153,7 @@ void main() {
     );
     await tester.pump();
 
-    expect(find.text('Galeria de Jogos'), findsOneWidget);
+    expect(find.text('SavePoint'), findsOneWidget);
     expect(find.text('Buscar jogo, local ou título'), findsOneWidget);
     expect(find.text('Não foi possível carregar as capturas'), findsNothing);
     expect(find.text('Hollow Knight'), findsOneWidget);
