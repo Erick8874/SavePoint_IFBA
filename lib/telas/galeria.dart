@@ -16,6 +16,7 @@ class Galeria extends StatefulWidget {
 }
 
 class _GaleriaState extends State<Galeria> {
+  List<dynamic> _todasCapturas = [];
   List<dynamic> _capturas = [];
   bool _carregandoCapturas = false;
   bool _falhaAoCarregarCapturas = false;
@@ -46,14 +47,15 @@ class _GaleriaState extends State<Galeria> {
   }
 
   bool _correspondeFiltro(dynamic captura, String filtro) {
-    if (filtro.isEmpty) {
+    final termo = filtro.trim().toLowerCase();
+    if (termo.isEmpty) {
       return true;
     }
 
     final texto =
         '${captura["captura"]["titulo"]} ${captura["jogo"]["nome"]} ${captura["captura"]["local"]}'
             .toLowerCase();
-    return texto.contains(filtro.toLowerCase());
+    return texto.contains(termo);
   }
 
   bool _correspondeTipo(dynamic captura) {
@@ -61,6 +63,13 @@ class _GaleriaState extends State<Galeria> {
       return true;
     }
     return captura["tipo"] == _tipoSelecionado;
+  }
+
+  List<dynamic> _filtrarCapturas() {
+    return _todasCapturas
+        .where(_correspondeTipo)
+        .where((captura) => _correspondeFiltro(captura, _filtro))
+        .toList();
   }
 
   Future<void> _carregarCapturas() async {
@@ -80,10 +89,8 @@ class _GaleriaState extends State<Galeria> {
       }
 
       setState(() {
-        _capturas = capturas
-            .where(_correspondeTipo)
-            .where((captura) => _correspondeFiltro(captura, _filtro))
-            .toList();
+        _todasCapturas = capturas;
+        _capturas = _filtrarCapturas();
         _carregandoCapturas = false;
       });
     } catch (_) {
@@ -108,17 +115,17 @@ class _GaleriaState extends State<Galeria> {
   }
 
   void _aplicarFiltro(String filtro) {
-    _filtro = filtro;
-    _capturas.clear();
-    _carregarCapturas();
+    setState(() {
+      _filtro = filtro;
+      _capturas = _filtrarCapturas();
+    });
   }
 
   void _selecionarTipo(String tipo) {
     setState(() {
       _tipoSelecionado = tipo;
+      _capturas = _filtrarCapturas();
     });
-    _capturas.clear();
-    _carregarCapturas();
   }
 
   Future<void> _alternarSessao() async {
@@ -140,7 +147,7 @@ class _GaleriaState extends State<Galeria> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Galeria de Jogos"),
+        title: const Text("SavePoint"),
         actions: [
           Padding(
             padding: const EdgeInsets.only(right: 8),
@@ -158,7 +165,7 @@ class _GaleriaState extends State<Galeria> {
             padding: const EdgeInsets.fromLTRB(12, 8, 12, 0),
             child: TextField(
               controller: _controladorFiltro,
-              onSubmitted: _aplicarFiltro,
+              onChanged: _aplicarFiltro,
               decoration: const InputDecoration(
                 border: OutlineInputBorder(),
                 hintText: "Buscar jogo, local ou título",
